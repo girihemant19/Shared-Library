@@ -1,0 +1,12 @@
+Docker run:
+docker run -it --rm --gpus all --ipc=host --net=host --cap-add=SYS_ADMIN --privileged -v $PWD:/host_pwd -w /host_pwd nvcr.io/nvidia/nvhpc:23.7-devel-cuda12.2-ubuntu20.04
+
+Makefile
+make clean
+make run or make
+
+OR
+
+nvfortran -acc -gpu=cc80 -Minfo=accel -shared -o libgpu.so libgpu.f90
+nvfortran -acc -gpu=cc80 -o main main.f90 -L. -lgpu  OR gfortran -o main main.f90 -L. -lgpu
+./main
