@@ -5,6 +5,9 @@ Makefile
 make clean
 make run or make
 
+OR 
+make docker
+
 OR
 
 nvfortran -acc -gpu=cc80 -Minfo=accel -shared -o libgpu.so libgpu.f90
